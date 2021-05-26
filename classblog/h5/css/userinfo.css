@@ -1,0 +1,271 @@
+img[src=""],img:not([src]) {
+    opacity:0;
+}
+/*设置*/
+.setting .row {
+    padding-top: 30px;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+.setting .aside li.active a, .setting .aside li:hover a {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+.setting .aside a {
+    padding: 10px 15px;
+    font-size: 15px;
+    display: block;
+}
+a {
+    cursor: pointer;
+}
+a, body {
+    color: #333;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+li {
+    line-height: 20px;
+}
+li {
+    text-align: -webkit-match-parent;
+}
+.setting .aside ul {
+    list-style: none;
+}
+ul {
+    list-style-type: disc;
+}
+.setting .aside {
+    width: 219px;
+}
+.setting .aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: 86px 0 0;
+    padding: 0 0 30px;
+    width: 280px;
+    overflow: auto;
+}
+.setting .row {
+    padding-top: 30px;
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.container {
+    width: 750px;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.setting .main {
+    padding-left: 0;
+}
+
+.col-xs-offset-8 {
+    margin-left: 33.33333%;
+}
+.col-xs-16 {
+    width: 66.66667%;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.main {
+    padding-top: 60px;
+}
+.setting .main {
+    padding-left: 0;
+}
+
+.col-xs-offset-8 {
+    margin-left: 42%;
+}
+.col-xs-16 {
+    width: 66.66667%;
+}
+.setting .main .hide {
+    position: absolute;
+    display: block!important;
+    width: 82px;
+    opacity: 0;
+}
+.setting .main .top-line {
+    padding-top: 0;
+}
+.setting .main td {
+    padding: 20px 0;
+}
+.setting .main .setting-title {
+    font-size: 15px;
+    color: #969696;
+}
+.setting .main td {
+    padding: 20px 0;
+}
+.setting .main .setting-title {
+    font-size: 15px;
+    color: #969696;
+}
+.setting .main .setting-save {
+    width: 100px;
+    margin: 30px 0 60px;
+    border-radius: 20px;
+    border: none;
+}
+.setting .aside .setting-icon i {
+    margin: 6px 0 0 1px;
+    font-size: 18px;
+    display: block;
+}
+.setting .main td {
+    padding: 20px 0;
+}
+.setting .main tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+.setting .main .setting-input {
+    line-height: 33px;
+}
+.setting .main .setting-title {
+    font-size: 15px;
+    color: #969696;
+}
+.setting .main td {
+    padding: 20px 0;
+}
+.pull-left {
+    float: left!important;
+}
+.setting .main .avatar {
+    width: 100px;
+    height: 100px;
+}
+.avatar {
+    width: 24px;
+    height: 24px;
+    display: block;
+    cursor: pointer;
+}
+.setting .main .btn-delete, .setting .main .btn-hollow {
+    font-size: 14px;
+}
+.btn-hollow {
+    border: 1px solid rgba(59,194,29,.7);
+    color: #42c02e!important;
+}
+.btn-delete, .btn-gray, .btn-hollow {
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 40px;
+    background: none;
+}
+.setting .main textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    background-color: hsla(0,0%,71%,.1);
+    display: block;
+    resize: none;
+    outline-style: none;
+}
+.setting .main span {
+    margin: 0 20px 0 6px;
+    font-size: 15px;
+    vertical-align: middle;
+}
+.style-input1 {
+    border:none;
+}
+.button {
+    margin-left: 100px;
+}
+button:focus{outline: 0;}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow:none;
+}
+.setting .main .avatar {
+    width: 100px;
+    height: 100px;
+}
+.avatar {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin-left: -10px;
+}
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+img {
+    vertical-align: middle;
+}
+td:first-child {
+    width: 120px;
+}
+li a span{
+    color: black;
+}
+.email-input {
+    border: none;
+}
+.change {
+    background-color: white;
+    border: 1px solid #4cae4c;
+    color: #4cae4c;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+.selection {
+    width: 67px;
+}
+.tip {
+    margin-top: 70px;
+}

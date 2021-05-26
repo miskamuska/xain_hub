@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.somecoder.demo.blog.mapper.ReplyMapper">
+
+    <select id="getAllReply" resultMap="ReplyResponse">
+        select
+            r.comment_id,
+            r.reply_id,
+            r.from_user_id,
+            s1.`name` from_name,
+            s1.head_pic_url from_head_pic_url,
+            r.to_user_id,
+            s2.`name` to_name,
+            s2.head_pic_url to_head_pic_url,
+            r.revert,
+            DATE_FORMAT(r.create_time,'%Y-%m-%d %H:%i:%s') create_time
+        from reply r
+                 left join student s1
+                            on r.from_user_id = s1.user_id and s1.is_deleted = 0
+                 left join student s2
+                            on r.to_user_id = s2.user_id and s2.is_deleted = 0
+        where r.is_deleted = 0 and r.comment_id in (
+            select
+                comment_id
+            from `comment`
+            where post_id = #{post_id} and is_deleted = 0
+        )
+        order by r.create_time asc;
+    </select>
+    <resultMap id="ReplyResponse" type="com.somecoder.demo.blog.entity.response.ReplyResponse">
+        <result column="comment_id" property="commentId"/>
+        <result column="reply_id" property="replyId"/>
+        <result column="from_user_id" property="fromUserId"/>
+        <result column="from_name" property="fromName"/>
+        <result column="from_head_pic_url" property="fromHeadPicUrl"/>
+        <result column="to_user_id" property="toUserId"/>
+        <result column="to_name" property="toName"/>
+        <result column="to_head_pic_url" property="toHeadPicUrl"/>
+        <result column="revert" property="revert"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消息</title>
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/userinfo.css">
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="../css/mypage.css">
+    <link rel="stylesheet" type="text/css" href="../css/message.css">
+    <style>
+        #fri {
+            color: #EA725D;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/notice.css">
+</head>
+<body onload="get_post(1,10)">
+<div class="header">
+
+</div>
+<div class="container setting" style="width: 1100px;">
+    <div class="aside" style="border-right: 1px solid #F0F0F0">
+        <ul id="fri_list">
+            全部好友：
+
+        </ul>
+    </div>
+    <div class="tip col-lg-offset-4">
+        <div id="fri_his_page" style="margin-top: 100px;margin-bottom: -40px">
+
+        </div>
+        <div class="post_list text-center">
+
+        </div>
+    </div>
+</div>
+<script src="../resource/jquery-3.5.1/jquery-3.5.1.js"></script>
+<script src="../resource/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../js/common.js"></script>
+<script src="../resource/layer-v3.2.0/layer/layer.js"></script>
+<script src="../js/userinfo.js"></script>
+<script src="../js/homepage.js"></script>
+<script src="../js/his_page.js"></script>
+<script>
+    $(function(){
+        $(".header").load("common.html");
+        let url = window.location.href.toString();
+        let url1 = decodeURI(url);
+        let id =url1.split("=")[1];
+        getPostData('/blog/student/showOtherStudent','','post',function (data) {
+            if(data.code === 0) {
+                let fri = data.data;
+                let str = ''
+                for (let i = 0; i < fri.length; i++) {
+                    let name = fri[i].name;
+                    let headPicUrl = fri[i].headPicUrl;
+                    let userId = fri[i].userId;
+                    let bac_color = '';
+                    if (id === undefined) {
+
+                    }else {
+                        if (id === userId) {
+                            bac_color = '#F0F0F0'
+                        }
+                    }
+                    str += "<li style='background-color: "+ bac_color +" '>\n" +
+                        "                <a href=\"friend.html?id="+userId +"\" style=\"color: black;display: block\">\n" +
+                        "                    <img src=\""+headPicUrl+"\" class=\"fri_head\">\n" +
+                        "                    <span class=\"content\" >"+name+"</span>\n" +
+                        "                </a>\n" +
+                        "            </li>"
+                }
+                $('#fri_list').append(str);
+            }else {
+                alert(data.msg);
+            }
+        })
+        if (id === undefined) {
+
+        } else {
+            let str = '<div style="display: inline-block">\n' +
+                '            <img src=\'\' class="img-circle" id="head" alt="头像">\n' +
+                '        </div>\n' +
+                '        <a class="btn btn-hollow" href="javascript: message()">\n' +
+                '            发私信\n' +
+                '        </a>\n' +
+                '        <div class="imf" style="display: inline-block;padding-top: 5px">\n' +
+                '            <span id="name"></span><br/>\n' +
+                '            <div style="font-size: 12px;color: #969696;display: inline-block;border-right: 1px solid #F0F0F0">\n' +
+                '                <span id="counts1"></span><br/>\n' +
+                '                文章数：\n' +
+                '            </div>\n' +
+                '            <div style="font-size: 12px;color: #969696;display: inline-block;border-right: 1px solid #F0F0F0">\n' +
+                '                <span id="counts2"></span><br/>\n' +
+                '                获赞数：\n' +
+                '            </div>\n' +
+                '            <div style="font-size: 12px;color: #969696;display: inline-block">\n' +
+                '                <span id="counts3"></span><br/>\n' +
+                '                获评数：\n' +
+                '            </div>\n' +
+                '        </div>'
+            $('#fri_his_page').append(str)
+        }
+    });
+</script>
+</body>
+</html>

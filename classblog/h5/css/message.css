@@ -1,0 +1,375 @@
+.head {
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    min-width: 40px;
+    min-height: 40px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 26px;
+}
+.content {
+    display: inline-block;
+    font-size: 17px;
+    line-height: 1.7;
+    font-family: 楷体;
+}
+.content > a {
+    color: #31A1DE;
+}
+.time {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #969696;
+    line-height: normal;
+}
+.msg {
+    padding-top: 30px;
+}
+.main_text {
+    font-size: 17px;
+    line-height: 1.7;
+    font-family: 楷体;
+}
+.operate {
+    margin-top: 6px;
+    margin-bottom: 20px;
+}
+.check  {
+    font-size: 13px;
+    color: #969696;
+    font-family: 新宋体;
+}
+/*对话*/
+.chat-top{
+    position: fixed;
+    width: 629px;
+    z-index: 1;
+    min-height: 35px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+.chat-top {
+    margin-top: -30px;
+    padding-top: 20px;
+}
+.chat-top .back-to-list {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    font-size: 14px;
+    color: #969696;
+}
+.message-show {
+    padding-top: 46px;
+    /*height: 400px;*/
+    width: 629px;
+}
+.message-show .message-list {
+    margin: 0;
+    /*padding: 10px 0 110px;*/
+    padding-right: 10px;
+}
+.message-show .message-l div .talk-content {
+    min-height: 39px;
+    background-color: #e7f1fc;
+    border-color: #e7f1fc;
+    border-radius: 0 4px 4px 4px;
+}
+.message-show li div .talk-content {
+    position: relative;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid;
+    /*word-break: break-word!important;*/
+    word-break: break-all;
+    line-height: 1.5;
+    display: table-cell;
+}
+.message-show li div {
+    position: relative;
+    display: block;
+    margin: 4px 56px 0;
+    min-height: 39px;
+}
+ul {
+    list-style: none;
+}
+.message-show li {
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+li {
+    line-height: 20px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+.write-message {
+    /*position: fixed;*/
+    bottom: 0;
+    width: 100%;
+    margin-top: 15px;
+    background-color: #fff;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+.chat-top .back-to-list {
+    top: 20px;
+    left: 0;
+    font-size: 14px;
+    color: #969696;
+}
+a {
+    cursor: pointer;
+}
+.chat-top b{
+    display: inline-block;
+    padding: 0 140px 0 160px;
+    font-size: 14px;
+}
+b, strong {
+    font-weight: 700;
+}
+.write-message .form-control {
+    background-color: hsla(0,0%,71%,.1);
+}
+.form-control {
+    width: 629px;
+    padding: 6px 12px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.message-show .message-r .time {
+    float: right;
+    margin-right: 5px;
+}
+.badge2 {
+    float: right;
+    top: 10px;
+    right: -5px;
+    color: #fff!important;
+    padding: 3px 5px;
+    font-size: 11px!important;
+    background-color: #ea6f5a;
+}
+.message-show .time {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #d9d9d9;
+}
+.ava {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+.ava img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+.message-show .message-r div .talk-content {
+    float: right;
+    min-height: 39px;
+    background-color: #eee;
+    border-color: #eee;
+    border-radius: 4px 0 4px 4px;
+}
+.message-r .ava {
+    float: right;
+    position: relative;
+    margin-left: 10px;
+}
+.message-l .ava {
+    float: left;
+    position: relative;
+    margin-right: 10px;
+}
+.message-show .message-r div:after {
+    right: -7px;
+    border-top: 16px solid #eee;
+}
+.message-show .message-r div:after,.message-show .message-r div:before {
+    right: -9px;
+    border-right: 9px solid transparent;
+    border-top: 16px solid #eee;
+}
+.message-show li div:after {
+    top: 1px;
+}
+.message-show li div:after, .message-show li div:before {
+    position: absolute;
+    top: 0;
+    content: "";
+    display: inline-block;
+}
+.write-message .btn-send {
+    float: right;
+    width: 78px;
+    margin: 10px 0;
+    padding: 8px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #42c02e;
+    cursor: pointer;
+    outline: none;
+    display: block;
+}
+.write-message .hint {
+    padding-top: 3px;
+    font-size: 13px;
+    color: #969696;
+}
+.write-message {
+    width: 629px;
+}
+.message-show .talk-content {
+    max-width: 500px;
+}
+.message-show .message-l div:after {
+    left: -7px;
+    border-top: 16px solid #e7f1fc;
+}
+.message-show .message-l div:after, .message-show .message-l div:before {
+    left: -9px;
+    border-left: 9px solid transparent;
+    border-top: 16px solid #e7f1fc;
+}
+/*.message-show .message-l .time {*/
+/*    margin-left: 56px;*/
+/*}*/
+.message-show li div:after {
+    top: 1px;
+}
+/*私信列表*/
+.talk-list {
+    /*margin-bottom: 30px;*/
+    font-size: 15px;
+    /*font-weight: 700;*/
+}
+.jianxin-list .pull-right {
+    margin-top: 20px;
+    font-size: 13px;
+}
+.pull-right {
+    float: right!important;
+}
+.jianxin-list .pull-right .time {
+    color: #9b9b9b;
+}
+.jianxin-list .pull-right div {
+    display: inline;
+}
+.open>a {
+    outline: 0;
+}
+.jianxin-list p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 楷体;
+}
+.ic-show:before {
+    content: "\E621";
+}
+.jianxin-list .wrap {
+    display: block;
+    padding: 20px 20px 20px 0;
+    min-height: 88px;
+}
+.dropdown-menu.pull-right {
+    right: 0;
+    left: auto;
+}
+.talk-time {
+   margin-right: 10px;
+}
+#del-menu {
+    min-width: 100px;
+    margin-top: 5px;
+    margin-right: -25px;
+}
+.talk-head {
+    float: left;
+    margin: 20px 10px 20px 20px;
+    width: 48px;
+    height: 48px;
+}
+.talk-head img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+.jianxin-list .name {
+    position: relative;
+    top: 25px;
+    font-size: 17px;
+    color: #31A1DE;
+    font-family: 楷体;
+}
+.line {
+    position: relative;
+    border-top: 1px solid #f0f0f0;
+}
+.del_a {
+    color: red;
+}
+#clear-talk {
+    min-width: 100px;
+    margin-top: -40px;
+    margin-right: 20px;
+}
+.back-color {
+    background-color:  #F6FBFF;
+}
+.count {
+    /*border: 1px solid  #EA725D;*/
+    border-radius: 10px;
+    /*background-color:  #EA725D;*/
+    /*padding: 0 2px;*/
+    /*color: white;*/
+    margin-right: 5px;
+    color: #fff!important;
+    padding: 3px 6px;
+    font-size: 11px!important;
+    background-color: #ea6f5a;
+    min-width: 10px;
+}
+.del_mod {
+    background-color: white;
+    border: 0 solid white;
+    float: right;
+    font-weight: lighter;
+    color: #9d9d9d;
+}
+#clear-collect {
+    min-width: 100px;
+    margin-top: -630px;
+    margin-right: 260px;
+}
+.fri_head {
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    min-width: 40px;
+    min-height: 40px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 13px;
+}

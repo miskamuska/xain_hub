@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://7npmedia.w3cschool.cn/w3.css">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin: 0;min-width: 1000px" >
+    <div class="container-fluid nav-contain">
+        <div class="navbar-header">
+            <a href="homepage.html"><img src="../img/nav-logo2.png" alt="logo" id="nav-logo"></a>
+        </div>
+        <div id="nav_menu">
+            <ul class="nav navbar-nav">
+                <li class="menu_text"><a class="nav-item" id="find" href="homepage.html?sortTheme=&key=">发现</a></li>
+                <li class="menu_text"><a class="nav-item" id="coll" href="mycollect.html">收藏</a></li>
+                <li class="menu_text">
+                    <span class="badge badge1"></span>
+                    <a class="nav-item" id="mesg" href="message.html">消息</a>
+                </li>
+                <li class="menu_text"><a class="nav-item" id="fri" href="friend.html">好友</a></li>
+                <li class="menu_text">
+                    <div class="search_form input-group" style="margin-top: 8px">
+                        <label><input type="text" placeholder="&nbsp;&nbsp;搜索" id="nav_input" ></label>
+                        <button class="search" type="button" onclick="search()" id="search_btn">
+                            <a class="glyphicon glyphicon-search"></a>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+
+            <ul id="user" class=" nav navbar-nav navbar-right">
+                <li class="menu_text">
+                    <div class="user_div dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <label id="user_name"></label>
+                            <img src="" class="img-circle pic" id="avatar" alt="头像">
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu pull-left" role="menu">
+                            <li role="presentation">
+                                <a class="single-item" role="menuitem" tabindex="-1" href="mypage.html">我的主页</a>
+                            </li>
+                            <li role="presentation">
+                                <a class="single-item" role="menuitem" tabindex="-1" href="mycollect.html">我的收藏</a>
+                            </li>
+                            <li role="presentation">
+                                <a class="single-item" role="menuitem" tabindex="-1" href="javascript:user_info();">个人信息</a>
+                            </li>
+                            <li role="presentation">
+                                <a class="single-item" role="menuitem" tabindex="-1" href="javascript:logout();">退出登录</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu_text">
+                    <button class="user_div write " onclick="window.location.href = 'write.html'">
+                        <span class="glyphicon glyphicon-leaf" style="color: white"></span>
+                        写说说
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script src="../js/common.js"></script>

@@ -1,0 +1,104 @@
+# 配置程序运行端口
+server:
+  port: 8081
+
+spring:
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mail:
+    username: classblogadmin@163.com
+    password: AHUTQWYOJDICNPNE
+    host: smtp.163.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+
+  datasource:
+    ## 连接池类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      # 数据源基本配置
+      username: group_two
+      password: Hebutgo123456!
+      url: jdbc:mysql://39.106.64.16:3306/group_two?useUnicode=true&characterEncoding=utf-8&SSL=true&serverTimezone=Asia/Shanghai
+      driverClassName: com.mysql.cj.jdbc.Driver
+
+      # druid连接池其他配置
+      ## 初始化连接数
+      initialSize: 1
+      ## 最小连接数
+      minIdle: 1
+      ## 最大会话数
+      maxActive: 10
+      ## 连接超时，ms。超时则认为无可用连接
+      maxWait: 3000
+      ## 检查空闲连接的频率，ms
+      timeBetweenEvictionRunsMillis: 600000
+      ## 空闲连接最小生存周期，ms。超时则下次检查时被回收
+      minEvictableIdleTimeMillis: 300000
+      ## 检查连接是否可用的语句
+      validationQuery: SELECT 1 FROM DUAL
+      ## 请求连接时分配连接前先检查该连接是否有效
+      testWhileIdle: true
+      ## 请求连接时，进行有效性检查（影响性能）
+      testOnBorrow: false
+      ## 返还连接时，进行有效性检查（影响性能）
+      testOnReturn: false
+      ## 缓存preparedStatement发起的sql
+      poolPreparedStatements: true
+      ## 每个连接最多缓存多少个SQL
+      maxPoolPreparedStatementPerConnectionSize: 20
+      ## 配置监控内容
+      filter:
+        stat:
+          enabled: true
+          dbType: mysql
+          logSlowSql: true
+          slowSqlMillis: 2000
+      ## 配置监控web服务
+      webStatFilter:
+        enabled: true
+        urlPattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      statViewServlet:
+        enabled: true
+        ### 监控服务路径
+        urlPattern: /druid/*
+        ### 是否允许重置数据
+        resetEnable: true
+        ### 登录信息
+        loginUsername: test
+        loginPassword: test
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:8080 #SpringBoot Admin Server地址
+        instance:
+          name: demo #注册上去的服务名称
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+logging:
+  level:
+    com.somecoder.demo.blog.mapper: debug
+
+#debug: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' #暴露所有的Actuator端点
+  endpoint:
+    health:
+      show-details: always
+
+file:
+  pathPattern: /file/**
+  location: E:/IDEA/classblog/java/upload/
+  url: http://localhost:8081/file/

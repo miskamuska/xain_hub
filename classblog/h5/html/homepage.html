@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClassBlog</title>
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="https://7npmedia.w3cschool.cn/w3.css">
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <style>
+        #find {
+            color: #EA725D;
+        }
+    </style>
+</head>
+<body onload="user();get_post(1,10);get_sort_btn();" onkeydown="keyLogin()" style="background-color: rgba(0, 0, 0, 0.02);">
+<div class="header">
+
+</div>
+<div class="container" style="width: 1000px;height: 100%;margin-top: 100px;">
+    <div class="row">
+        <div class="col-lg-2" style="margin-top: 15px">
+            <div class="w3-sidebar w3-bar-block" style="width: 100px" id="sort">
+                <a href="javascript:go_sort('');" class="w3-bar-item w3-button sort_item" id="a0">全部</a>
+            </div>
+        </div>
+        <div class="post_list text-center col-lg-7">
+
+        </div>
+        <div class="col-lg-3" style="padding-left: 5px">
+            <div class="gp-articeTitle01 gp-articeTitle03 gp-fl notice-icon">
+                <div class="gp-title" style="position: fixed">
+                    <a href="my_notices.html" >
+                    <span class="title_icon gp-center white gp-pr">
+                        <span class="glyphicon glyphicon-bullhorn"></span>
+                    </span>
+                        <h2 class="notice-title gp-center gp-f22 gp-fwn">通知公告</h2>
+                    </a>
+                </div>
+            </div>
+            <div class="notice_content notice-body">
+                <ul class="gp-list04" id="notice-list">
+                </ul>
+                <a href="my_notices.html" class="more-notice">更多通知公告--></a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="../resource/jquery-3.5.1/jquery-3.5.1.js"></script>
+<script src="../resource/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../resource/layer-v3.2.0/layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/homepage.js"></script>
+<script src="../js/new_contain.js"></script>
+<script src="../js/day_notice.js"></script>
+<script>
+    $(function(){
+        $(".header").load("common.html");
+    });
+</script>
+</body>
+</html>

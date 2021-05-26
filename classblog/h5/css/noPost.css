@@ -1,0 +1,15 @@
+body {
+    background: url("../img/space.png") 50% 10px no-repeat;
+}
+#nothing {
+    margin-top: 500px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+#choice {
+    margin-top:10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}

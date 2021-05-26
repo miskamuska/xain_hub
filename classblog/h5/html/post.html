@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClassBlog</title>
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="https://7npmedia.w3cschool.cn/w3.css">
+    <link rel="stylesheet" type="text/css" href="../css/post.css">
+</head>
+<body onload="user();get_post()" style="background: #F9F9F9">
+<div class="header">
+
+</div>
+<div class="container" style="width: 1000px;margin-top: 100px;">
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="post_list text-center col-md-10" style="background: white">
+
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+
+</div>
+<div class="func_btn">
+    <div>
+        <button class="circle" id="like" onclick="like()">
+            <i class="glyphicon glyphicon-thumbs-up"></i>
+        </button>
+        <div id="like_counts" class="num"></div>
+    </div>
+
+    <div>
+        <button class=" circle" id="collect" onclick="collect()">
+            <i class="glyphicon glyphicon-star"></i>
+        </button>
+        <div id="collect_counts" class="num"></div>
+    </div>
+
+</div>
+<script src="../resource/jquery-3.5.1/jquery-3.5.1.js"></script>
+<script src="../resource/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../resource/layer-v3.2.0/layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/homepage.js"></script>
+<script src="../js/post.js"></script>
+<script>
+    $(function(){
+        $(".header").load("common.html");
+    });
+</script>
+</body>
+</html>

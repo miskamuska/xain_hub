@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>审核权限登录</title>
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/intoReview.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body onkeydown="keyLogin()">
+<!--权限审核-->
+<h1>ClassBlog</h1>
+<div class="login" style="margin-top:50px;">
+    <div class="header">
+        <div class="switch" id="switch">
+            <a class="switch_btn_focus" id="switch_register" href="javascript:void(0);" style="padding-left: 45px" tabindex="7">管理员登录</a>
+        </div>
+    </div>
+    <div class="web_qr_login" id="web_qr_login" style="display: block; height: 275px;">
+        <!--登录-->
+        <div class="web_login" id="web_login">
+            <div class="login-box">
+                <div class="login_form">
+                    <form accept-charset="utf-8" id="login_form" class="loginForm">
+                        <input type="hidden" name="did" value="0"/>
+                        <input type="hidden" name="to" value="log"/>
+                        <div class="uinArea" id="uinArea">
+                            <label class="input-tips" for="loginId">账号：</label>
+                            <div class="inputOuter" id="uArea">
+                                <input type="text" id="loginId" name="username" class="input-style" placeholder="请输入账号"/>
+                            </div>
+                        </div>
+                        <div class="pwdArea" id="pwdArea">
+                            <label class="input-tips" for="password" >密码：</label>
+                            <div class="inputOuter" id="pArea">
+                                <input type="password" id="password" class="input-style" placeholder="请输入密码"/>
+                            </div>
+                        </div>
+                        <div class="button-login">
+                            <button id="login_btn" data-ripple type="button" class="button ripple-container ripple" onclick="administratorLogin()">登录</button>
+                        </div>
+                        <div class="else1"><a href="login.html" id="forget-pwd">学生登录--></a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--登录end-->
+    </div>
+</div>
+<script src="../resource/jquery-3.5.1/jquery-3.5.1.js"></script>
+<script src="../resource/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/intoReview.js"></script>
+<script src="../resource/layer-v3.2.0/layer/layer.js"></script>
+<script src="../js/ripple.js"></script>
+</body>
+</html>

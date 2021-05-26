@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClassBlog</title>
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="https://7npmedia.w3cschool.cn/w3.css">
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+</head>
+<body onload="user();get_notice()"  style="background-color: rgb(243,245,248)">
+<div class="header">
+
+</div>
+<div>
+
+    <div class="gp-container gp-subpage gp-pr" style="margin-top: 120px;">
+        <div class="pageArticleTitle" style="text-align: center">
+            <span class="gp-f22 gp-fwn" id="title_content" style="color: #092C87;"></span>
+        </div>
+        <div class="articleAuthor">
+            <label>时间：</label>
+            <span id="time2" style="margin-right: 300px;"></span>
+            <label>发布人：</label>
+            <span id="author"></span>
+        </div>
+        <div class="row">
+            <div class="gp-article gp-article03 gp-f16 col-md-6 col-md-offset-3" id="notice_content" >
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="../resource/jquery-3.5.1/jquery-3.5.1.js"></script>
+<script src="../resource/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../resource/layer-v3.2.0/layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/noticeDetail.js"></script>
+<script src="../js/homepage.js"></script>
+<script>
+    $(function(){
+        $(".header").load("common.html");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+body {
+    background: #fff url(../img/1.jpg) 50% 0 no-repeat;
+}
+#box {
+    width: 450px;
+    height: 400px;
+    padding: 50px;
+    margin-top: 150px;
+    margin-right: 20px;
+    border: 1px solid #E8E8FF;
+    box-shadow: 12px 12px 0 0 rgba(0,0,0,0.3);
+    background-color: white;
+}
+.form-group {
+    width: 500px;
+}
+.btn {
+    margin-top: 25px;
+    width: 500px;
+}
+.content {
+    width: 100px;
+}
+#logo-picture {
+    width: 100px;
+    margin-left: 195px;
+}
+label {
+    display: inline-block;
+}
+.form-inline {
+    height: 60px;
+}
+.form-control {
+    width: 200px;
+    margin-left: 10px;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+#btn-find-pwd {
+    width: 345px;
+    margin-top: 0;
+}
+#receive-code {
+    margin-top: 0;
+    width: 100px;
+    border-radius: 3px;
+    padding: 9px 10px;
+    background-color: #4cae4c;
+}

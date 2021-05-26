@@ -1,0 +1,279 @@
+	*{
+			margin:0;
+			padding: 0;
+			font-family: '微软雅黑';
+		}
+
+		@media only screen  and (max-width: 767px) {
+			.sg-mask{
+				position: absolute; top: 0; filter: alpha(opacity=20);
+				/*background-color: #333;     */
+				z-index: 1002; left: 0;
+				-moz-opacity:0.5; 
+				width:100%;
+				height: 100%;  
+				display: block; 
+				overflow: hidden;  
+			}
+			.popups-box{
+				width:100%;
+				text-align:center;
+				background-color:#fff;
+				border-radius: 5px;
+				position: absolute;
+				bottom: -251px;
+				margin: 0 auto;
+				float: left;
+
+			}
+			.popups-box .title-min{
+				height: 35px;
+				width: 100%;
+				line-height: 35px;
+				color: #fff;
+				background-color: #23b7e5;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+			}
+			.popups-box .title-min .query{
+				float: left;
+				margin-left: 10px;
+				cursor: pointer;
+			}
+			.popups-box .title-min .submit{
+				float: right;
+				margin-right: 10px;
+				cursor: pointer;
+			}
+			.popups-box .title-max{
+				display: none;
+			}
+
+
+			.popups-box .close{
+				width: 30px;
+				height: 35px;
+				text-align: center;
+				float: right;
+				cursor: pointer;
+
+			}
+			.popups-box .result-box{
+				text-align: left;
+				padding-left: 5px;
+				height: 40px;
+				line-height: 40px;
+				margin-top: 10px;
+				border-bottom: 1px solid #bfbfbf;
+				padding-bottom: 10px;
+				display: flex;
+			}
+			.popups-box .result-box input{
+				height: 30px;
+				line-height: 30px;
+				flex: 1;
+				margin-left: 10px;
+				margin-right: 10px;
+				padding-left: 10px;
+			}
+			.popups-box .footer{
+				display: none;
+			}
+
+			.tab-box{
+				 
+				float: left;
+
+			}
+			.tab-menu{
+				height: 50px;
+				line-height: 50px;
+				border-bottom: 1px solid #bfbfbf;
+
+			}
+			.tab-box .tab-menu li{
+				list-style: none;
+				float: left;
+				width: 33%;
+				cursor:pointer;
+			}
+			.tab-content{
+				width: 100%;
+				height: 100%;
+				margin-top: 2px;
+				float: left;
+				width: 33%;
+				height: 102px;
+				overflow: hidden;
+			/* 	overflow: hidden;
+				overflow: auto;
+			 	-webkit-overflow-scrolling:touch;
+			 */
+			}
+			.tab-content ul{
+				float: left;
+				width: 100%;
+			}
+
+			.tab-list-1,.tab-list-2,.tab-list-3{
+				display: block;
+			}
+			.content-box{
+				float: left;
+				width: 100%;
+
+			}
+			.tab-content li{
+				width: 105px;
+				height:35px;
+				line-height: 35px;
+				float: left;
+				list-style: none;
+				width: 100%;
+
+			}
+			.minISClick a{
+				background-color: #23b7e5;
+				padding: 3px;
+				color: #fff;
+				max-width: 105px;
+				border-radius: 5px;  
+			}
+
+
+		}
+		@media only screen  and (min-width: 768px) {
+			.sg-mask{
+				position: absolute; top: 0px; filter: alpha(opacity=20);
+				/*background-color: #333;     */
+				z-index: 1002; left: 0px;     
+				-moz-opacity:0.5; 
+				width:100%;
+				height: 100%;  
+				display: block;   
+			}
+			.popups-box{
+				width:650px;
+				text-align:center;
+				background-color:#F2F2F2;
+				border-radius: 5px;
+				position: relative;
+				margin: 0 auto;
+				top:200px;
+
+			}
+			.popups-box .title-min{
+				display: none;
+			}
+			.popups-box .title-max{
+				height: 35px;
+				/*width: 640px;*/
+				line-height: 35px;
+				color: #fff;
+				text-align: left;
+				padding-left: 10px;
+				background-color: #23b7e5;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+
+			}
+			.popups-box .close{
+				width: 30px;
+				height: 35px;
+				text-align: center;
+				float: right;
+				cursor: pointer;
+
+			}
+			.popups-box .result-box{
+				text-align: left;
+				padding-left: 20px;
+				height: 40px;
+				line-height: 40px;
+				margin-top: 10px;
+				border-bottom: 1px solid #bfbfbf;
+				padding-bottom: 10px;
+			}
+			.popups-box .result-box input{
+				height: 30px;
+				line-height: 30px;
+				width: 480px;
+				padding-left: 10px;
+				margin-left: 5px;
+			}
+			.popups-box .footer{
+				height: 60px;
+				width: 650px;
+				line-height:60px;
+				border-top: 1px solid #bfbfbf;
+				bottom: 0px;
+				text-align: right;
+				clear: both;
+
+			}
+			.popups-box .footer button{
+				width: 80px;
+				height: 40px;
+				line-height: 40px;
+				border-radius: 5px;
+				background-color: #23b7e5;
+				color: #fff;
+				font-size: 15px;
+				border:none;
+				outline: none;
+				cursor: pointer;
+				margin-right: 10px;
+			}
+			.tab-box{
+				width: 100%;
+
+			}
+			.tab-menu{
+				height: 50px;
+				line-height: 50px;
+				padding-left: 12px;
+				padding-right: 12px;
+			}
+			.tab-box .tab-menu li{
+				list-style: none;
+				float: left;
+				width: 33%;
+				cursor:pointer;
+			}
+			.tab-content{
+				width: 100%;
+				height: 100%;
+				margin-top: 2px;
+				float: left;
+				display: none;
+			}
+
+
+			.tab-content li{
+				width: 105px;
+				height:34px;
+				line-height: 34px;
+				float: left;
+				list-style: none;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				 
+			}
+			.tab-content li a:hover{
+				cursor: pointer;
+				background-color: #23b7e5;
+				padding: 3px;
+				color: #fff;
+				max-width: 105px;
+				border-radius: 5px; 
+				 
+			}
+			.isCheck{
+				border-bottom: 2px solid #23b7e5;
+				box-sizing: border-box;
+			}
+			.isBlock{
+				display: block;
+			}
+		}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人资料</title>
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/userinfo.css">
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/SG_area_select.css">
+</head>
+<body>
+<!--导航栏-->
+<div class="header">
+
+</div>
+<div class="container setting">
+    <div class="row">
+        <div class="aside">
+            <ul>
+                <li class="router-link-exact-active active">
+                    <a href="userinfo.html">
+                        <div class="setting-icon">
+                            <i class="iconfont ic-settings-profile"></i>
+                        </div>
+                        <span class="glyphicon glyphicon-user"></span> <span>个人资料</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="manageAccount.html">
+                        <div class="setting-icon">
+                            <i class="iconfont ic-settings-account"></i>
+                        </div>
+                        <span class="glyphicon glyphicon-cog"></span> <span>帐号管理</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-16 col-xs-offset-8 main">
+            <table>
+                <thead>
+                <tr>
+                    <th class="setting-head responsive-head"></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody class="base">
+                <tr>
+                    <td class="top-line">
+                    <div class="avatar">
+                        <img src="" alt="头像" class="pic">
+                    </div>
+                </td>
+                    <td class="top-line">
+                        <a class="btn btn-hollow">
+                            <input type="file" class="hide" id="changPic">更改头像
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-title">姓名
+                    </td>
+                    <td>
+                        <input type="text" class="style-input1" id="studentName" readonly="readonly">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-title">学号
+                    </td>
+                    <td>
+                        <input type="text" class="style-input1" id="studentNumber" readonly="readonly">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-title setting-verticle">性别</td>
+                    <td>
+                        <input type="radio" value="男" name="gender" id="gender1">
+                        <span>男</span>
+                        <input type="radio" value="女" name="gender" id="gender2">
+                        <span>女</span>
+<!--                        <input type="radio" value="保密" name="gender" id="gender3">-->
+<!--                        <span>保密</span>-->
+                    </td>
+                </tr>
+<!--                <tr>-->
+<!--                    <td class="setting-title">邮箱</td>-->
+<!--                    <td>-->
+<!--                        <input class="style-input1" type="text" id="email">-->
+<!--                    </td>-->
+<!--                </tr>-->
+                <tr>
+                    <td class="setting-title">星座
+                    </td>
+                    <td>
+                        <select id="constellation" name="constellation">
+                            <option>-请选择-</option>
+                            <option value="1">白羊座</option>
+                            <option value="2">金牛座</option>
+                            <option value="3">双子座</option>
+                            <option value="4">巨蟹座</option>
+                            <option value="5">狮子座</option>
+                            <option value="6">处女座</option>
+                            <option value="7">天秤座</option>
+                            <option value="8">天蝎座</option>
+                            <option value="9">射手座</option>
+                            <option value="10">摩羯座</option>
+                            <option value="11">水瓶座</option>
+                            <option value="12">双鱼座</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-title">出生日期</td>
+                    <td>
+                        <select class="sel_year" name="YYYY" id="year">
+                            <option value="">请选择</option>
+                        </select>
+                        <label>年</label>
+                        <select class="sel_month" name="MM" id="month">
+                            <option value="">请选择</option>
+                        </select>
+                        <label>月</label>
+                        <select class="sel_day" name="DD" id="day">
+                            <option value="">请选择</option>
+                        </select>
+                        <label>日</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-title">所在地区
+                    </td>
+                    <td>
+                        <div style="display: flex;">
+                            <div>
+                                <input class="sg-area-result" id="location" readonly="readonly" type="text" style="width: 220px;height: 30px;border: 1px solid #ccc;padding-left: 10px">
+                            </div>
+                            <div id="selectBtn" style="width: 30px;height: 30px;border: 1px solid #ccc;cursor: pointer; text-align: center">&gt;</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="setting-title pull-left">个性签名</td>
+                    <td>
+                        <form>
+                            <textarea placeholder="填写你的个性签名" id="signature"></textarea>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <input type="button" class="btn btn-success setting-save" value="保存" onclick="changInfo()">
+        </div>
+    </div>
+</div>
+<script src="../resource/jquery-3.5.1/jquery-3.5.1.js"></script>
+<script src="../resource/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/userinfo.js"></script>
+<script src="../resource/layer-v3.2.0/layer/layer.js"></script>
+<script src="../js/homepage.js"></script>
+<script type="text/javascript" src="../js/jquery.time.js"></script>
+<script type="text/javascript" src="../js/birthday.js"></script>
+<script src="../js/iscroll.js"></script>
+<script src="../js/SG_area_select.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#selectBtn').on('click',function(){
+            $.areaSelect();
+        })
+    })
+</script>
+<script>
+    $(function(){
+        $(".header").load("common.html");
+    });
+</script>
+</body>
+</html>

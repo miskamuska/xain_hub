@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.somecoder.demo.blog.mapper.CollectMapper">
+    <select id="getCollectCount" resultMap="CountDto">
+    select
+    post_id,
+    count(post_id) collect_count
+    from collect
+    where is_deleted = 0
+    group by post_id
+    having post_id in
+        <foreach collection="postIdLists" item="postIdList" index="index" open="(" close=")" separator=",">
+            #{postIdList}
+        </foreach>
+    </select>
+    <resultMap id="CountDto" type="com.somecoder.demo.blog.entity.dto.CountDto">
+        <result column="post_id" property="postId"/>
+        <result column="collect_count" property="count"/>
+    </resultMap>
+</mapper>

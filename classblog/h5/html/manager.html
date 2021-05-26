@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>班级圈管理中心</title>
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="../css/manager.css">
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/reviewStudent.css">
+</head>
+<body onload="user();">
+<div class="header">
+
+</div>
+<div class="nav">
+
+</div>
+<div class="all-list" style="padding-top: 20px">
+    <h2>审核名单</h2>
+    <div style="margin:20px;text-align:center">
+        <form class="form-inline" id="select_group">
+            <div class="form-group">
+                <label for="select_Id">学号</label>
+                <input type="text" class="form-control" id="select_Id" placeholder="请输入学号">
+            </div>
+            <div class="form-group" style="margin-left: 30px">
+                <label for="select_Name">姓名</label>
+                <input type="text" class="form-control" id="select_Name" placeholder="请输入姓名">
+            </div>
+            <button type="button" class="btn btn-default" onclick="select()">查找</button>
+        </form>
+    </div>
+    <div style="margin:auto 250px;border:2px solid #95959580">
+        <table class="table table-striped" id="table">
+            <thead>
+            <tr>
+                <th>
+                    学号
+                </th>
+                <th>
+                    姓名
+                </th>
+                <th>
+                    操作
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="../resource/jquery-3.5.1/jquery-3.5.1.js"></script>
+<script src="../resource/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<!--<script src="../resource/bootstrap-table.js"></script>-->
+<script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/reviewStudent.js"></script>
+<script src="../resource/layer-v3.2.0/layer/layer.js"></script>
+<script src="../js/homepage.js"></script>
+<script>
+    $(function(){
+        $(".header").load("manager_nav.html");
+        $(".nav").load("manager_nav2.html");
+    });
+</script>
+</body>
+</html>

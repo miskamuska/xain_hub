@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消息</title>
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/userinfo.css">
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/message.css">
+    <link rel="stylesheet" href="../css/notice.css">
+    <style>
+        #mesg {
+            color: #EA725D;
+        }
+        #li_msg{
+            background-color: #F0F0F0;
+        }
+    </style>
+</head>
+<body onload="get_message_counts()">
+<div class="header">
+
+</div>
+<div class="container setting" style="width: 1100px;">
+<div class="aside">
+
+</div>
+    <div class="tip col-lg-offset-4">
+        <div>
+            <div class="talk-list" style="padding-bottom: 30px;padding-top: 10px">全部私信
+<!--                <button data-toggle='dropdown' class="del_mod glyphicon glyphicon-option-vertical dropdown-toggle" aria-expanded='false'></button>-->
+<!--                <ul class='dropdown-menu pull-right menu' id="clear-collect">-->
+<!--                    <li><button class='del_a' onclick="clear_talk()">一键已读</button></li>-->
+<!--                </ul>-->
+            </div>
+            <ul class="jianxin-list" id="talk-list">
+
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="../resource/jquery-3.5.1/jquery-3.5.1.js"></script>
+<script src="../resource/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../js/common.js"></script>
+<script src="../resource/layer-v3.2.0/layer/layer.js"></script>
+<script src="../js/userinfo.js"></script>
+<script src="../js/homepage.js"></script>
+<script src="../js/del.js"></script>
+<script>
+    $(function(){
+        $(".header").load("common.html");
+        $(".aside").load("common2.html");
+        getPostData('/blog/friend/showFriendList','','post',function (data) {
+            if(data.code === 0) {
+                if (data.data.length === 0) {
+                    let str = '';
+                    str ="<img src='../img/space4.png' id='space'>"
+                    $('.talk-list').append(str);//无帖子
+                }else {
+                    let str = "";
+                    for(let i=0; i < data.data.length; i++) {
+                        let friendName = data.data[i].friendName;
+                        let friendUserId = data.data[i].friendUserId;
+                        let headPicUrl = data.data[i].headPicUrl;
+                        let lastContent = data.data[i].lastContent;
+                        let time = data.data[i].time;
+                        let url = "../html/talk.html?id="+friendUserId;
+                        let count = data.data[i].count;
+                        if(count > 0 ) {
+                            str = "<li class='line back-color'><div class='pull-right'>" +
+                                "<span class='talk-time'> " + time + "</span>" + "<div class='del_mod_div dropdown'>" +
+                                "<button data-toggle='dropdown' class='del_mod glyphicon glyphicon-chevron-down dropdown-toggle' aria-expanded='false'></button>" +
+                                "<ul class='dropdown-menu pull-right menu' id='del-menu'><li>" +
+                                "<button class='del_a' onclick='Del(\"" + friendUserId + "\")'>删除对话</button>" +
+                                "</li></ul>" + "</div>" + "<span class='count'>" + count +"</span>" + "</div>" +
+                                "<a href=\"" +url + "\"  target='_blank' class='talk-head'><img src=\""+ headPicUrl +"\"></a>" +
+                                "<a href=\"" +url + "\"  target='_blank' class='name'> "+ friendName + "</a>" +
+                                "<a href=\"" +url + "\"  class='wrap'><p>" + lastContent + "</p></a>" +
+                                "</li>"
+                        } else {
+                            str = "<li class='line'><div class='pull-right'>" +
+                                "<span class='talk-time'> " + time + "</span>" + "<div class='del_mod_div dropdown'>" +
+                                "<button data-toggle='dropdown' class='del_mod glyphicon glyphicon-chevron-down dropdown-toggle' aria-expanded='false'></button>" +
+                                "<ul class='dropdown-menu pull-right menu' id='del-menu'><li>" +
+                                "<button class='del_a' onclick='Del(\"" + friendUserId + "\")'>删除对话</button>" +
+                                "</li></ul>" + "</div>" + "</div>" +
+                                "<a href=\"" +url + "\"  target='_blank' class='talk-head'><img src=\""+ headPicUrl +"\"></a>" +
+                                "<a href=\"" +url + "\"  target='_blank' class='name'> "+ friendName + "</a>" +
+                                "<a href=\"" +url + "\"  class='wrap'><p>" + lastContent + "</p></a>" +
+                                "</li>"
+                        }
+                        $("#talk-list").append(str);
+                    }
+                }
+
+            }
+            else {
+                alert(data.msg);
+            }
+        })
+    });
+    function Del(friendUserId) {
+        let data = {
+            friendUserId: friendUserId,
+        }
+        getPostData('/blog/friend/deleteFriend',data,'post',function (data) {
+            if (data.code === 0) {
+                layer.msg(data.msg);
+                setTimeout(function () {
+                    location.reload();
+                }, 1000);
+            } else {
+                layer.msg(data.msg);
+            }
+        })
+    }
+    function clear_talk() {
+        getPostData('/blog/letter/clearAllLetterMessage','','post',function (data) {
+            if(data.code === 0) {
+                location.reload();
+            }else {
+                alert(data.msg);
+            }
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClassBlog</title>
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="https://7npmedia.w3cschool.cn/w3.css">
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="../css/mypage.css">
+</head>
+<body onload="user();get_post(1,10);" style="background-color: rgba(0,0,0,0.013);">
+<div class="header">
+
+</div>
+<div class="container" style="width: 750px;margin-top: 100px;background-color: #F9F9F9">
+    <div>
+        <div style="display: inline-block">
+            <img src='' class="img-circle" id="head" alt="头像">
+        </div>
+        <a class="btn btn-hollow" href="javascript: message()">
+            发私信
+        </a>
+        <div class="imf" style="display: inline-block;padding-top: 5px">
+            <span id="name"></span><br/>
+            <div style="font-size: 12px;color: #969696;display: inline-block;border-right: 1px solid #F0F0F0">
+                <span id="counts1"></span><br/>
+                文章数：
+            </div>
+            <div style="font-size: 12px;color: #969696;display: inline-block;border-right: 1px solid #F0F0F0">
+                <span id="counts2"></span><br/>
+                获赞数：
+            </div>
+            <div style="font-size: 12px;color: #969696;display: inline-block">
+                <span id="counts3"></span><br/>
+                获评数：
+            </div>
+        </div>
+    </div>
+    <div class="post_list text-center">
+
+    </div>
+</div>
+<script src="../resource/jquery-3.5.1/jquery-3.5.1.js"></script>
+<script src="../resource/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../resource/layer-v3.2.0/layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<!--<script src="../js/his_page_showhead.js"></script>-->
+<script src="../js/homepage.js"></script>
+<script src="../js/his_page.js"></script>
+<script>
+    $(function(){
+        $(".header").load("common.html");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ClassBlog</title>
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/userinfo.css">
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/message.css">
+    <link rel="stylesheet" href="../css/notice.css">
+    <style>
+        #mesg {
+            color: #EA725D;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+
+</div>
+<div class="container setting" style="width: 1100px;">
+  <div class="row">
+    <div class="aside">
+      <ul>
+        <li>
+          <a href="message.html" style="color: black;display: block">
+            <div class="setting-icon">
+              <i class="iconfont ic-settings-profile"></i>
+            </div>
+            <div style="display: inline-block;margin-right: 10px" class="glyphicon glyphicon-edit"></div><div style="display: inline-block;">评论和回复</div>
+          </a>
+        </li>
+        <li>
+          <a href="msg_like.html" style="color: black;display: block">
+            <div class="setting-icon">
+              <i class="iconfont ic-settings-account"></i>
+            </div>
+            <div style="display: inline-block;margin-right: 10px" class="glyphicon glyphicon-thumbs-up"></div><div style="display: inline-block;">喜欢</div>
+          </a>
+        </li>
+        <li>
+          <a href="msg_collect.html" style="color: black;display: block">
+            <div class="setting-icon">
+              <i class="iconfont ic-settings-account"></i>
+            </div>
+            <div style="display: inline-block;margin-right: 10px" class="glyphicon glyphicon-star"></div><div style="display: inline-block;">收藏</div>
+          </a>
+        </li>
+        <li class="router-link-exact-active active">
+          <a href="msg_easyMsg.html" style="color: black;display: block">
+            <div class="setting-icon">
+              <i class="iconfont ic-settings-account"></i>
+            </div>
+            <div style="display: inline-block;margin-right: 10px" class="glyphicon glyphicon-envelope"></div><div style="display: inline-block;">私信</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tip col-lg-offset-4">
+      <div class="chat-top">
+        <a href="msg_easyMsg.html" class="back-to-list active"><span class="glyphicon glyphicon-chevron-left"></span> 返回私信列表</a>
+        <b>与<span id="friend-name"> </span>的对话</b>
+        <button data-toggle='dropdown' class="del_mod glyphicon glyphicon-option-vertical dropdown-toggle" aria-expanded='false'></button>
+        <ul class='dropdown-menu pull-right menu' id="clear-talk"><li><button class='del_a' onclick="clear_all()">清空对话</button></li></ul>
+      </div>
+      <div class="message-show" style="overflow:auto; height: 480px; width: 629px;display: flex; flex-direction: column-reverse;">
+        <ul class="message-list" id="msg-list">
+
+        </ul>
+      </div>
+      <div class="write-message">
+        <form>
+          <textarea type="text" placeholder="输入内容" class="form-control" id="msg-content"></textarea>
+          <input type="button" class="btn btn-send" value="发送" id="send">
+        </form>
+      </div>
+    </div>
+</div>
+<script src="../resource/jquery-3.5.1/jquery-3.5.1.js"></script>
+<script src="../resource/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../js/common.js"></script>
+<script src="../resource/layer-v3.2.0/layer/layer.js"></script>
+<script src="../js/userinfo.js"></script>
+<script src="../js/homepage.js"></script>
+<script src="../js/msg_easyMsg.js"></script>
+<script src="../js/talk.js"></script>
+<script>
+  $(function(){
+    $(".header").load("common.html");
+  });
+  $("#send").click(function (){
+    let url = window.location.href.toString();
+    let id =url.split("=")[1];
+    let data = {
+      content: $("#msg-content").val(),
+      toUserId: id
+    }
+    getPostData('/blog/letter/addLetter',data,'post',function (data) {
+      if(data.code === 0) {
+         location.reload();
+      }else {
+        alert(data.msg);
+      }
+    })
+  })
+  function clear_all() {
+    let url = window.location.href.toString();
+    let id =url.split("=")[1];
+    let data = {
+      friendUserId: id
+    }
+    getPostData('/blog/letter/deleteAllLetterRecord',data,'post',function (data) {
+      if(data.code === 0) {
+        location.reload();
+      }else {
+        alert(data.msg);
+      }
+    })
+  }
+</script>
+</body>
+</html>

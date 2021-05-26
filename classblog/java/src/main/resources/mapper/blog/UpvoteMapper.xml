@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.somecoder.demo.blog.mapper.UpvoteMapper">
+
+    <select id="getAllUpvote" resultType="String">
+        select
+            s.`name`
+        from upvote u
+                 inner join student s
+                            on u.user_id = s.user_id and s.is_deleted = 0
+        where u.post_id = #{post_id} and u.is_deleted = 0
+        order by u.create_time desc;
+    </select>
+
+    <select id="getUpvoteCount" resultMap="CountDto">
+        select
+        post_id,
+        count(post_id) upvote_count
+        from upvote
+        group by post_id
+        having post_id in
+        <foreach collection="postIdLists" item="postIdList" index="index" open="(" close=")" separator=",">
+            #{postIdList}
+        </foreach>
+    </select>
+    <resultMap id="CountDto" type="com.somecoder.demo.blog.entity.dto.CountDto">
+        <result column="post_id" property="postId"/>
+        <result column="upvote_count" property="count"/>
+    </resultMap>
+
+</mapper>

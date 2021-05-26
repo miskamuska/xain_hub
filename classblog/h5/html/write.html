@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>写说说</title>
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../resource/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/write.css">
+    <link rel="stylesheet" href="../resource/layui-v2.5.7/layui/css/layui.css">
+</head>
+<body onload="user();get_sort_option()" style="background-color: rgba(0,0,0,0.013);">
+<div class="header">
+
+</div>
+<div class="container notice-container" style="margin-top: 100px;">
+    <div class="row" >
+            <div>
+                <label>
+                    <input type="text" placeholder="请输入文章标题" class="article-title" id="title">
+                </label>
+            </div>
+                <div class=" article-select">
+                    <span id="article">文章类别：</span>
+                    <select id="sort">
+                        <option selected></option>
+                    </select>
+                    <button type="button" class="btn btn-default article-release" onclick="submit()"><span class="glyphicon glyphicon-send"></span> 发布文章</button>
+            </div>
+        <textarea id="text" class="tex" style="display: none;" lay-verify="content"></textarea>
+    </div>
+</div>
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script src="../resource/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/write.js"></script>
+<script src="../js/homepage.js"></script>
+<script src="../resource/layer-v3.2.0/layer/layer.js"></script>
+<script src="../resource/layui-v2.5.7/layui/layui.all.js"></script>
+<script>
+    let layedit;
+    let index;
+    layui.use('layedit', function(){
+        layedit = layui.layedit;
+        layedit.set({
+            uploadImage: {
+                url: 'http://localhost:8081/blog/post/uploadPic' //接口url
+                ,type: 'POST' //默认post
+            }
+        });
+        index = layedit.build('text', {
+            height: 400,//设置编辑器高度
+        });
+    })
+</script>
+<script>
+    $(function(){
+        $(".header").load("common.html");
+    });
+</script>
+</body>
+</html>
